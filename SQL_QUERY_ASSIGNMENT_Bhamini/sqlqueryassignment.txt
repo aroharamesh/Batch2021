@@ -1,0 +1,94 @@
+show databases; 
+create database digital; 
+use digital ; 
+  
+create table Customer (
+cust_id int primary key auto_increment,
+cust_name varchar(30) NOT NULL, 
+phone_no varchar(20), 
+email varchar(30),
+gender varchar(20),
+dob  date,
+city_id int 
+);  
+create table City (
+city_id int primary key auto_increment , 
+city_name varchar(30) NOT NULL 
+); 
+insert into Customer(cust_name, dob  ,gender, phone_no, email, city_id)
+
+ values ('Manju','1990-01-08','male','8349012345','manju@gmail.com',2),
+ 
+ ('Jhon','1990-01-02','male','8877551374','jhon@gmail.com',9),
+ 
+ ('Roy','1950-01-04','female','9035013679','roy@gmail.com',10),
+ 
+ ('veena','2000-01-10','female','9268003671','veena@gmail.com',12),
+ 
+ ('Alok','2001-09-09','male','9810772563','alok@gmail.com',11),
+ 
+ ('Ram','1973-06-09','male','9505932204','ram@gmail.com',61),
+ 
+ ('Chintu','1938-08-06','female','8025210397','chintu@gmail.com',36),
+ 
+ ('Marry','2001-08-01','female','7125903672','marry@gmail.com',35),
+ 
+ ('Bob','1998-01-08','male','9005865234','bob@gmail.com',40),
+ 
+ ('shree','2001-08-04','female','7091234560','shree@gmail.com',11);
+ 
+#1display all customer table
+SELECT * FROM Customer; 
+
+#2customers who doesnot have a phone;
+SELECT cust_name FROM Customer WHERE phone_no is NULL or phone_no = ''; 
+
+#3display all the male customers
+SELECT * FROM Customer WHERE gender = 'male'; 
+
+#3display the all the female customers
+SELECT* FROM Customer WHERE gender = 'female';  
+
+#4display the customers who were born in the year 2001
+SELECT * FROM Customer WHERE year(dob) = '2001';
+
+# 5display the customer names and customer age 
+SELECT cust_name ,round(DATEDIFF(NOW(), (dob))/365) as age FROM Customer; 
+
+#6display the customer names whose age is more than 60; 
+SELECT cust_name ,round(DATEDIFF(NOW(), (dob))/365) as age FROM Customer WHERE  round(DATEDIFF(NOW(), (dob))/365) >60; 
+ 
+#7display the customer name and his city name
+SELECT Customer.cust_name , city.city_name FROM Customer,city WHERE Customer.city_id = city.city_id;
+
+#8display the customer who have their   gmail 
+SELECT* FROM Customer WHERE email like '%gmail.com%';  
+
+INSERT INTO City(city_name)
+ values ("Banglore"),
+ ("chennai"),
+ ("hassan"),
+ ("Mysore"),
+ ("ooty");
+ 
+#9display the customers_name who are from Banglore.
+SELECT Cust_name FROM Customer WHERE city_id=(SELECT city_id FROM city WHERE city_name='Banglore');
+
+#10display the customers name who as same city as alok
+SELECT Cust_name FROM Customer WHERE city_id = (SELECT city_id FROM Customer WHERE Cust_name='alok'); 
+
+# 11display the customers name where age is more than Ram
+ SELECT Cust_name ,round(DATEDIFF(NOW(), (dob))/365) as age FROM Customer WHERE round(DATEDIFF(NOW(), (dob))/365) > 
+ (SELECT round(DATEDIFF(NOW(), (dob))/365) FROM Customer WHERE Cust_name = 'Ram'); 
+ 
+ #12display the customer_names who have their birthday in current month
+ SELECT Cust_name ,month(dob) FROM Customer WHERE month(dob) = month(now()); 
+ 
+ #13display the first day of current month
+SELECT (curdate()-day(curdate()))+1 as first_day_of_month; 
+ 
+ #14display the first day of current year 
+SELECT MAKEDATE(EXTRACT(YEAR FROM CURDATE()),1) as first_day_of_year;
+
+  #15display the cus_names who as birthaday in the last month;
+   SELECT Cust_name ,month(now()) as previous_month FROM Customer WHERE month(dob) = MONTH(CURDATE())-1; 
