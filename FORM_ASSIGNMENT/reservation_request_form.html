@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Request Form</title>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>General information</legend>
+            <table>
+                <tr>
+                    <td>Arrive date:</td>
+                    <td><input type="text" id="fname" name="fname"></td>
+                </tr>
+                <tr>
+                    <td>Nights:</td>
+                    <td><input type="text" id="fname" name="fname"></td>
+                </tr>
+
+            </table>
+            <br>
+            <tr>
+
+                <td>adults:</td>
+                <table>
+                    <select id="Children" name="Children">
+                        <option value="age">1</option>
+                        <option value="age">2</option>
+                        <option value="age">3</option>
+                        <option value="age">4</option>
+                        <option value="age">5</option>
+                    </select>
+                </table>
+            </tr>
+            <br>
+            <tr>
+
+                <td>Children:</td>
+                <table>
+                    <select id="adults" name="adults">
+                        <option value="age">0</option>
+                        <option value="age">1</option>
+                        <option value="age">2</option>
+                        <option value="age">3</option>
+                        <option value="age">4</option>
+
+                    </select>
+                </table>
+            </tr>
+        </fieldset>
+        <fieldset>
+            <legend>References</legend>
+            <td>Room type:</td>
+            <table>
+
+                <input type="radio" id="contactChoice1" name="contact" value="email">
+                <label for="contactChoice1">Standard</label>
+
+                <input type="radio" id="contactChoice2" name="contact" value="phone">
+                <label for="contactChoice2">Business</label>
+
+                <input type="radio" id="contactChoice3" name="contact" value="mail">
+                <label for="contactChoice3">Suite</label>
+            </table>
+            </tr>
+            <td>Bed type:</td>
+            <table>
+
+                <input type="radio" id="contactChoice1" name="contact" value="email">
+                <label for="contactChoice1">King</label>
+
+                <input type="radio" id="contactChoice2" name="contact" value="phone">
+                <label for="contactChoice2">Double Double</label>
+                <br>
+                <input type="radio" id="contactChoice3" name="contact" value="mail">
+                <label for="contactChoice3">Smoking</label>
+            </table>
+            </tr>
+        </fieldset>
+        <fieldset>
+            <legend>contact information</legend>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" id="fname" name="fname"></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" id="fname" name="fname"></td>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td><input type="text" id="fname" name="fname"></td>
+                </tr>
+            </table>
+        </fieldset>
+        <input type="submit" value="Submit Reservation" style="text-align:center;">
+        <input type="submit" value="Clear" style="text-align:center;">
+    </form>
+</body>
+
+</html>
