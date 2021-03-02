@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flex test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+        }
+        
+        .navbar {
+            display: flex;
+            background-color: #05386B;
+            justify-content: flex-end;
+        }
+        
+        .navbar a {
+            font-family: 'Arial Narrow Bold';
+            color: #5CDB95;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .navbar a:hover {
+            background-color: #5CDB95;
+            color: #05386B;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        
+        .side {
+            background-color: #05386B;
+            padding: 20px;
+            color: #5CDB95;
+        }
+        
+        .main {
+            background-color: #05386B;
+            padding: 20px;
+            color: #5CDB95;
+        }
+        
+        .image {
+            flex: 80%;
+            background-image: url("./aroha.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            height: 300px;
+            width: auto;
+            padding: 20px;
+        }
+        
+        .flex-container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .flex-container>div {
+            width: 50% !important;
+            text-align: left;
+            font-family: 'Times New Roman';
+            color: #5CDB95;
+        }
+        
+        .footer {
+            display: flex;
+            padding: 20px;
+            text-align: left;
+            background: #05386B;
+            align-items: baseline;
+            color: white;
+        }
+        
+        .footer a {
+            margin-left: 950px;
+            justify-content: flex-end;
+            color: #FFD662FF;
+        }
+        
+        @media screen and (max-width: 700px) {
+            .row,
+            .navbar {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#">HOME</a>
+        <a href="#">ABOUT</a>
+        <a href="#">SERVICES</a>
+        <a href="#">CONTACT US</a>
+    </div>
+
+
+
+
+    <div class="image"></div>
+
+
+    <div class="row">
+        <div class="side">
+            <h2>About us</h2>
+            <p class="About">We combine creativity and analytics in every engagement. We believe that the magic happens in the gap between what is expected and what is delivered, and we as a company strive to make the gap negligible. We love what we do and that makes
+                it easier for us to learn, create, inspire, evolve, educate, and deliver in every walk of deliverance. Ultimately, we hold that having a satisfied customer is the best business strategy of all.</p>
+        </div>
+
+        <div class="main">
+            <h2>SERVICES</h2>
+            <div class="flex-container">
+                <div><b>KNOWLEDGE SERVICES</b>-Aroha is an innovator in the development and delivery of practical learning programs for the global corporate community. Expanding on the vast horizons of the technology and business, our focus is on results,
+                    driven by an experienced approach and tracked by variety of data based planning, learning, assessment and evaluations.
+
+                </div>
+                <div><b>MANAGED SERVICES</b>-Aroha is your perfect partner to take you through the process of outsourcing your IT and providing you with the right methodologies and support systems to reduce cost, mitigate risks and improve day-to-day operations.
+                    Aroha’s services and solutions are all about influencing positive business outcomes. They are designed to address customer challenges and support organizations on their journey through digital transformation to digital business.
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h6>Copyright&#169;2021</h6>
+        <a href="https://aroha.co.in/">AROHA TECHNOLOGIES</a>
+
+    </div>
+
+</body>
+
+</html>
