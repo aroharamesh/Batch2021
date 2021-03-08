@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>swap two variable</title>
+  </head>
+  <body>
+    <div id="display"></div>
+    <script>
+      var a = 'red',
+          b = 'blue';
+      var output = document.getElementById("display");
+
+      output.innerHTML = "<p>before swapped: " + a + ", " + b + "</p>";
+
+      b = [a, (a = b)][0];
+
+      output.innerHTML += "<p>after swapped: " + a + ", " + b + "</p>";
+    </script>
+  </body>
+</html>
