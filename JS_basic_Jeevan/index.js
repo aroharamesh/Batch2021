@@ -1,65 +1,122 @@
-console.log("Hello Aroha");
+//arithmetic operator
+let x = 10;
+let y = 3;
 
-alert("hello i am alert message ");
+console.log("x =", x);
+console.log("y=", y);
 
-var num = 190;
 
-let name = "aroha";
-let age = 23;
-let isAproved = true;
-let f_name = undefined;
-let l_name = null;
+console.log("this is the sum ", x + y);
+console.log("this is the differnece ", x - y);
+console.log("this is the multiply ", x * y);
+console.log("this is the divide ", x / y);
+console.log("this is the modulus ", x % y);
+console.log("this is the power ", x ** y); //Exponent (x power y)
 
-const work_place = "Jayanagar";
 
-console.log(typeof("name"));
-console.log(typeof(age));
-console.log(typeof(isAproved));
-console.log(typeof(f_name));
-console.log(typeof(l_name));
+console.log("this is post increment", x++); //post increment    
+console.log("this is pre increment", ++x); //pre increment
 
-let Person = {
-    name: "raju",
-    City: "Bangalore",
-    Phone: 8790890877
-}
+console.log("this is post decrement", x--); //post decrement
+console.log("this is pre decrement", --x); //pre decrement
 
-console.log(Person);
-console.log(Person.Phone);
-console.log(Person["City"]);
+console.log("this is x=x+5", x += 5); //increment by 5   
+console.log("this is x=x-5", x -= 5); //decrement by 5
 
 
 
-let Person1 = {
-    name: "raju",
-    address: {
-        city: "bangalore",
-        state: "karnataka"
-    },
-    Phone: 8790890877
-}
-console.log(Person1.address.state);
-console.log(Person1["address"]["city"]);
+//Comparision operator
 
-let slectedColors = ["red", "green", "yellow"];
-console.log("this is an array " + slectedColors);
-slectedColors[3] = "23";
-console.log("this is an array after adding elmemnr to index (3) " + slectedColors);
+let a = 2;
+console.log("a=", a);
+//relational
+console.log("a > 1", a > 1);
+console.log("a < 1", a < 1);
+console.log("a >= 1", a >= 1);
+console.log("a <= 1", a <= 1);
+
+//Equality
+
+//strict equality
+console.log("a === 2", a === 2);
+console.log("'2' === 2", '2' === 2);
+//loose equality
+console.log("1 == 1", 1 == 1);
+console.log("'1' == 1", '1' == 1);
+console.log("true == 1", true == 1);
+
+//tenary operator
+let points = 101
+console.log("points=", points)
+let typeOfCustomer = points > 100 ? 'gold' : 'silver';
+console.log("points>100?'gold':'silver'= ", typeOfCustomer);
+
+
+//logical operator
+//AND (&&)
+let highIncome = false;
+console.log("highIncome", highIncome)
+let goodCreditscore = true;
+console.log("goodCreditScore", goodCreditscore)
+let eligibleForloan = highIncome && goodCreditscore;
+console.log('Eligible for loan using &&', eligibleForloan);
+
+//OR(||)
+let highIncome1 = false;
+console.log("highIncome", highIncome1)
+let goodCreditscore1 = true;
+console.log("goodCreditScore", goodCreditscore1)
+let eligibleForloan1 = highIncome1 || goodCreditscore1;
+console.log('Eligible for loan using ||', eligibleForloan1);
+
+//NOT(!)
+let highIncome2 = false;
+console.log("highIncome", highIncome2)
+let goodCreditscore2 = false;
+console.log("goodCreditScore", goodCreditscore2)
+let eligibleForloan2 = highIncome2 || goodCreditscore2;
+console.log('Eligible for loan', eligibleForloan2);
+let applicationRefused = !eligibleForloan2;
+console.log('Application Refused', applicationRefused);
+
+
+//falsy
+let k = 1;
+
+console.log("k=", k);
+console.log("false || k", false || k);
+console.log("false || false", false || false);
+console.log("false || 'aroha'", false || 'Aroha');
+
+//truthy
+console.log("false && ++k =", false && ++k);
 
 
 
+console.log("true || ++k =", true || ++k);
 
-function greet() {
-    console.log("this is function");
-}
+//Short Circuit
+console.log("false || 1|| 2 =", false || 1 || 2);
 
-greet();
+console.log("false && 1 && 2t =", false && 1 && 2);
 
-function square(number) {
-    return number * number;
-}
+//Bitwise operartor
+console.log("1|2 =", 1 | 2);
+console.log("1&2 =", 1 & 2);
 
-console.log("this is function with argument " + square(5));
+//example of bitwise
+let myPermission = 0;
+console.log("myPermission =", myPermission);
+const readPermission = 4;
+console.log("readPermission =", readPermission);
+const writePermission = 2;
+console.log("writePermission =", writePermission);
+const executePermission = 1;
+console.log("executePermission =", executePermission);
 
-let square2 = square;
-console.log("This is function reference   " + square2);
+myPermission = myPermission | writePermission | readPermission;
+console.log("myPermission = myPermission | writePermission | readPermission =", myPermission);
+
+
+let message = (myPermission | readPermission) ? 'yes' : 'no';
+console.log("message=(myPermission|readPermission)?'yes':'no' =", message);
