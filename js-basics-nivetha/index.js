@@ -1,256 +1,301 @@
-//Conditional statements
-//If hour is between 6 am to 12 pm print good morning!
-//Else If hour is between 12 pm to 18 pm print good afternoon!
-//Else print good evening!
+//objects
 
-// let hour = 19;
-// if (hour >= 6 && hour < 12) {
-//     console.log("Good Morning!")
-// }
+// let x = 1;
+// let y = 1;
+// let radius = 1;
 
-// else if (hour>=12 && hour <= 18) {
-//     console.log("Good Afternoon");
-// }
-// else { 
-//     console.log("Good Evening");
-// }
+//objects are collection of key value pairs 
 
-//check whether the current logged in user is guest,moderator or admin
+// Group related objects
 
-// let user = 'guest'
-// switch (user) {    
-//     case 'guest':
-//         console.log("User is guest");
-//         break;
-//     case 'moderator':
-//         console.log("User is moderator");
-//         break;
-//     default:
-//         console.log("User is admin");
-//         break;   
-// }
-
-//Loops
-//For
-//While
-//Do..while
-//For..in
-//For..of
-
-//Even numbers
-// for (let i = 0; i <= 10; i++) { 
-//     if (i % 2 === 0)
-//         console.log("Even number is ", i);
-// }
-
-// for (let i = 10; i >= 0; i--) { 
-//     if (i % 2 === 0)
-//         console.log("Even number is ", i);
-// }
-
-// let i = 0;
-// while (i <= 5) { 
-//     console.log(i);
-//     i++;
-// }
-
-// Do..While loop
-// let i = 6;
-// do {
-//     console.log(i);
-// } while (i <= 5)
- 
-// obj = { name: 'nivetha', phone: '7540054073' }; 
-// for (key in obj)     //key variable will hold the property of an object 
-//     console.log(obj[key]);
-
-// let arr = [1, 2, 3];
-
-// for (index in arr)
-//     console.log(arr[index]);
-
-// for (ele of arr)
-//     console.log(ele);
-
-
-//Break and Continue
-
-// for (i = 0; i <= 10; i++) { 
-//     if (i === 3)
-//         break;
-//     console.log(i);
-// }
-
-// for (i = 0; i <= 10; i++) { 
-//     if (i === 3)
-//         continue;
-//     console.log(i);
-// }
-
-//maximum of 2 numbers 
-
-// let maximum = (first_number,second_number) => { 
-//     return (first_number > second_number?first_number : second_number);
-// }
-// console.log("Maximum is ", maximum(10, 15));
-
-//isLandscape(width,height);
-
-// let isLandscape = (width, height) => { 
-//     if (width>height)
-//         return true;
-//     return false;
-// }
-
-// console.log("Landscape is ",isLandscape(10,20));
-
-
-// let fizzBuzz = (num) => {
-//     num % 15 == 0 ? console.log(num) : (num % 5 == 0) ? console.log("Fizz") : (num % 3 == 0) ? console.log("Buzz") : typeof num == "number" ? console.log("Not a number") : console.log("Not a suitable number");
-      
-// }
-// fizzBuzz(15);
-
-// let speedLimit = 70;
-// let maxLimit = 12;
-// let kmPerPoint = 5;
-
-// function speedCheck(speed) {    
-//     if (speed < speedLimit + kmPerPoint)
-//         console.log("Message is ok");
-//     else { 
-//         let points = Math.floor((speed - speedLimit) / kmPerPoint);
-//         if (points >= maxLimit)
-//             console.log("License suspended");
-//         else
-//             console.log("Point is ", points);
+// const circle = {
+//     radius: 1,
+//     location: {
+//         x: 1,
+//         y: 1
+//     },
+//     isVisible: true,
+//     draw: function () { 
+//         console.log('draw');
 //     }
 // }
 
-// speedCheck(75);
+// //If a function is a part of a object, we call it as a method 
 
-// Even and odd numbers
-// function rangeOfEvenAndOdd(range) {
-//     for (i = 0; i <= range; i++)
-//         (i % 2 !== 0) ? console.log(`${i} is odd`) : console.log(`${i} is even`);        
-    
-// }
+// circle.draw();
 
-// rangeOfEvenAndOdd(100);
 
-// const arr = [0, null, undefined, false,'', 2, 3];
+//factory function
 
-// let countTruthy = (arr) => { 
-//     var count = 0;
-//     for (ele of arr)
-//         if (ele)
-//             count++; 
-//     return count;
-        
-// }
-
-// console.log(countTruthy(arr));
-
-//showProperties 
-
-// const movie = { title: 'a', releaseYear: 2018, rating: 4.5, director: 'b' };
-
-// var showProperties = (movie) => { 
-//     for (prop in movie) { 
-//         var type = typeOf(movie[prop])
-//         if (typeOf == 'string')
-//             console.log(movie[prop]);
+// function createCircle(radius) {
+//     const circle = {
+//             radius,
+//             location: {
+//                 x: 1,
+//                 y: 1
+//             },
+//             isVisible: true,
+//             draw: function () { 
+//                 console.log('draw');
+//             }
 //     }
-        
-        
+//     return circle;    
 // }
 
-// showProperties(movie);
+// console.log(createCircle(1));
+// console.log(createCircle(2));
 
+//optimized code 
 
-// Sum of all the multiples of 3 and 5
-
-// var multipleRange = (num) => { 
-//     var sum = 0;
-//     for (i = 0; i <= num; i++) 
-//         if (i % 3 == 0 || i%5==0)
-//             sum += i;           
-//     return sum;
-
-// }
-
-// console.log(multipleRange(15));
-
-
-//Calculating the grade of a student
-
-//avg is 1-59 then F
-//avg is 60-69 then D 
-//avg is 70-79 then C
-//avg is 80-89 then B
-//avg is 90-100 then A 
-
-//calculateGrade(marks)
-// const marks = [90, 90, 90]
-
-// let calculateGrade = (marks) => { 
-//     let avg;
-//     let sum = 0;
-//     let len_arr = 0;
-//     let message  = "Grade is "
-//     for (mark of marks)
-//     {
-//         sum += mark;
-//         len_arr += 1;
-    
-//     }
-//     avg = sum / len_arr;
-//     avg > 1 && avg <= 59 ? console.log(message, "F"):avg >= 60 && avg <= 69 ?console.log(message, "D"):avg>=70 && avg <= 79 ?console.log(message,"C"):avg>=80 && avg <= 89?console.log(message, "B"):avg>=90 && avg <= 100?console.log(message, "A"):avg;
-        
-// }
-
-// calculateGrade(marks)
-
-
-// let showStars = (limit) => { 
-
-//     for (i = 0; i <= limit; i++) {
-//         for (j = 0; j <= i; j++) {
-//             document.write("*");
-//         }
-//         document.write("<br>")
-//     }
-
-// }
-
-// showStars(10);
-
-// Prime numbers 
-// showPrime(limit)
-// showPrime(10);
-// function showPrime(limit) {
-//     for (i = 2; i <= limit; i++) {
-//         for (j = 2; j <= i ; j++)
-//             if (i % j == 0)               
-//                 break;
-//         if (j == i)
-//             console.log(i);
+// function createCircle(radius) {
+//     return {
+//             radius,
+//             location: {
+//                 x: 1,
+//                 y: 1
+//             },
+//             isVisible: true,
+//             draw: () => { 
+//                 return 'draw';
+//             }
 //     }
 // }
 
+// console.log(createCircle(1).constructor);
+// console.log(createCircle(2));
+// console.log(createCircle(1).draw())
+
+
+//camel Notation - oneTwoThree factory function
+//Pascal Notation - OneTwoThree - Constructor function
+
+//Constructor function
+
+    // function Circle(radius) { 
+    //     this.radius = radius; //"this" creates reference to an empty object
+    //     this.draw = function () { 
+    //         console.log("draw");
+    //     }
+    // }
+
+    // const circle = new Circle(1);  
+    // console.log(circle.constructor);
+
+//Both patterns are good, no difference
+// 3 things 
+// 1.creates an empty object // const x = {} 
+// 2.set "this" keyword to point to the new object
+// 3.returns the object form the function 
+
+//Dynamic nature of the object 
+
+// const circle = {
+//     radius: 1
+// };
+
+// // we cannot reassign the const object, but we can add or remove the properties.
+// circle.red = {}
+// console.log(circle)
+
+
+//Constructor property 
 
 
 
+// const Circle1 = new Function('radius','circle', `
+// this.radius = radius;
+// // this.circle = circle;
+// this.draw = function () { 
+//              console.log("draw");
+//          }`);
+// const Circle2 = new Circle1(1,2);
+// console.log(Circle1);
+// console.log(Circle2);
 
 
+// function Circle3(radius) { 
+//     this.radius = radius;
+//     this.draw = function () {
+//         console.log("draw");
+//     }
+// }
+
+// const circle3 = new Circle3(1);
+// console.log(circle3);
+
+//copy value 
+// let x = 20;
+// let y = x;
+// x = 10; 
+// console.log(x, y);
+
+//copy by reference
+
+// let a = {value:10};
+// let b = a;
+// b.value = 20;   
+// console.log(a.value);
+// console.log(b.value);
+
+//Primitives are copied by their value 
+//Objects are copied by their reference
+
+// function increase(obj) { 
+//     return ++obj.value;
+// }
+
+// console.log(increase(a));
+// console.log(increase(11));
+
+//Enumerating properties of an object 
+
+// const circle = {
+//     radius: 1,
+//     draw() {
+//         return "draw";
+//     }
+// }
+// // console.log(circle.draw())
+
+// for (let key of Object.keys(circle))
+//     console.log(key);
+
+// for(let entry of Object.entries(circle)) //displays properties and arrays in an array format
+//     console.log(entry);
+
+// if ('radius' in circle)
+//     console.log("YES");
+
+//Cloning of an object 
+// Copying all the properties and functions of an object to another 
+
+// const circle4 = {
+//     radius: 1,
+//     draw() { 
+//         console.log("draw");
+//     }
+// }
+
+// const person = {
+//     name:'Nivetha'
+// }
+
+// const anotherCircle = {};
+
+// for(key in circle4)
+// { 
+//     anotherCircle[key] = circle4[key];
+// }
+
+// console.log(anotherCircle);
+
+// const anotherCircle = Object.assign({}, circle4);
+// const anotherCircle = Object.assign({}, circle4,person);
+
+// anotherCircle['radius'] = 10;
+// console.log(anotherCircle);
 
 
+// const anotherCircle = Object.assign({ city: 'Bengaluru' }, circle4)
+// console.log(anotherCircle);
+// console.log(circle4);
+
+//Spread operator
+// const anotherCircle = { ...circle4 };
+// anotherCircle['city'] = 'Bengaluru';
+// console.log(anotherCircle);
+// console.log(circle4);
 
 
+//Garbage Collection
+//allocates and deallocates the memory,user we don't have control 
+
+// let circles = {} //allocates the memory
+// console.log(circles); //after displaying deallocates the memory
+
+//Math 
+
+// console.log(Math.random())
+
+// const str = new String('hi');
+// str1 = str;
+// str1 = "y";
+// console.log(str,str1);
+
+//Template literals
+
+// const message = "this is my first message";
+// console.log(message);
+
+// const name = "Nivetha";
+// const templateLiteral = `My name is ${name}`;   
+// console.log(templateLiteral);
+
+//Date 
+
+// const date = new Date(2021,14,12); //0-11 months // if we incrementing after 11, it incrementing a month
+// console.log(date);
+
+//Assignments
+
+//Address object with the below properties and create a function showAddress(address)
+//which displays all the properties and the values
+//street 
+// city 
+//zipCode 
 
 
+//create address object by using factory and constructor function 
+
+//create a blog post object 
+//title 
+//body 
+//author 
+//views
+//comments 
+// [authour,body]
+//isLive 
 
 
+function showAddress(street,city,zipCode) { 
+    return {
+        street: street,
+        city: city,
+        zipCode: zipCode
+    }
+}
+
+console.log(showAddress("vp street", "Tirunelveli", 627416));
 
 
+function ShowAddress(street, city, zipCode) { 
+    this.street = street;
+    this.city = city;
+    this.zipCode = zipCode;
 
+}
+
+console.log(new ShowAddress("vp street", "Tirunelveli", 627416));
+
+function blogPost(title,author,body,views,comments,isLive) { 
+    return {
+        title,
+        details: { author, body },
+        views,
+        comments,
+        isLive
+    }
+}
+
+console.log(blogPost("Raja Rani", "Atlee", "Love movie", "500000", "Good one", "No"));
+
+
+function BlogPost(title, author, body, views, comments, isLive) { 
+    this.title = title;
+    this.details = { author, body };
+    this.views = views;
+    this.comments = comments;
+    this.isLive = isLive;
+}
+
+console.log( new BlogPost("Raja Rani", "Atlee", "Love movie", "500000", "Good one", "No"));
