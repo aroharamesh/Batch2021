@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>factory_constructor</title>
+</head>
+<body> 
+
+	<script type="text/javascript">  
+	     
+	let address = {
+    street: 'rajroad',
+    city: 'banglore',
+    zipCode:'45678',
+    getFullAddress() {
+        return this.street + ' ' + this.city+' '+this.zipCode;
+    }
+};
+
+console.log(address.getFullAddress());
+	   
+	   
+	 
+	</script>
+     
+</body>
+</html>
