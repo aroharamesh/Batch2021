@@ -1,114 +1,73 @@
-//Functions are objects
+// const first = [1, 2, 3];
+// const second = [4, 5, 6];
 
-// function Circle(radius) {
-//     this.radius = radius;
-//     this.draw = () => {
-//         console.log("draw");
-//     }
-// }
+//Concat method
 
-// let circle1 = new Circle('a');
-// let circle2 = new Circle('a');
-// let circle3 = circle1;
-// console.log(circle1 === circle2); //false
-// console.log(circle1 === circle3); //true //because both references to the same location
+// const combined = first.concat(second);
+// console.log(combined);
 
-// // console.log(Circle.name);
-// // console.log(Circle.length);
-// //constructor property will convert functions into objects internally
-// Circle.call({},1);
+// const combined = [...first, ...second];
+//console.log(combined);
 
-// let variable = 1;
-// let variable2 = variable;
-// // variable2 = 2;
-// console.log(variable === variable2);
+//Slicing an array
 
-// Arrays
-//Add an element(s)
-//remove an element(s)
-//find an element(s)
-//split an element(s)
-// combine the arrays
+//first way of slicing
 
-// const numbers = [1, 2, 3, 4, 1,1];
-// numbers[0] = 10;
-// numbers.unshift(10); //push the element at the beginning of the array
-// numbers.push(5);  //push the element at the end of the array
-// numbers.shift();  //delete the element at the beginning of the array
-// numbers.pop();     //delete the element at the end of the array
-// console.log(numbers);
+// console.log(combined.slice(-4, -2)); // [3,4]
+// console.log(combined.slice(-2, -4)); // returns empty array
 
-// numbers.splice(2, 0, 'a', 'b'); //first position for index of the array
-// //second position howmany values to be inserted/removed
-// console.log(numbers);
-// console.log(numbers.indexOf(1)); //return the index of an element  or return -1 if element is not exists.
-// console.log(numbers.indexOf(1, 0)); //return the index of an first occurrence of element from the start
-// (seond parameter) position or return -1 if element is not exists.
+//3rd way of slicing
+// console.log(combined.slice());
 
-// console.log([...new Set(numbers)]);
-// console.log(numbers.lastIndexOf(1));
-// console.log(numbers.includes(1)); //true if element exists false otherwise
+//Both the concat and slice does the same thing on the primitive types
+//Both the arrays are copied by values
 
-// Finding the elements - Reference types
+// const first = [{ id: 1 }]
+// const second = [4, 5, 6];
+// console.log(first.concat(second));
 
-// const course = [
-//   {
-//     id: 1,
-//     name: "a",
-//   },
-//   {
-//     id: 2,
-//     name: "b",
-//   },
-// ];
-
-// console.log(course.includes({ id: 1, name: "a" }));//false because of different memory location
-
-// console.log(course.find((courses) => { 
-//     return courses.name=='a';
-// }));
-
-// const Numbers = [1, 2, 3, 4];
-// const middle = Numbers.splice();     
-// console.log(middle);
-// console.log(Numbers.splice())
-// console.log(Numbers);
-// Numbers.splice(0); //Removes everything
-// console.log(Numbers);
-
-//Remove all the elements of the array
-
-//Solution 1
+//Iterating an array
 
 // const numbers = [1, 2, 3, 4];
-// let another = numbers;
-// another = []; 
-// console.log(numbers);
 
-//Solution 2
+//first way
+// for (let number of numbers) console.log(number);
 
-// let numbers = [1, 2, 3, 4];
-// numbers.length = 0;
-// console.log(numbers);
+//second way
+// numbers.forEach((number) => {
+//   console.log(number);
+// });
 
-//Solution 3  
+// numbers.forEach((number, index) => console.log(number, index));
 
-// let numbers = [1, 2, 3, 4];
-// console.log(numbers.splice(0));
-// console.log(numbers);
+//Joining an array
 
-//Solution 4 - Not recommended(Don't use for-loop)
+// const numbers = [1, 2, 3];
+// console.log(numbers.join('-'))
 
-// let numbers = [1, 2, 3, 4];
-// while(numbers.length > 0) {
-//     numbers.pop();
-// }
-// console.log(numbers); 
+// const messages = "this is my message";
+// console.log(messages.split())
 
+//slug
+// const messages = "this is my message";
+// const parts = messages.split(' ');
+// console.log(parts.join('-'))
 
+//Sorting arrays
 
+// const numbers = [3, 2, 6];
+// console.log(numbers.sort(function(a, b) { return b - a; }));
 
-
-
-
-
+const courses = [
+  { id: 1, name: "Nodejs" },
+  { id: 2, name: "js" },
+];
+console.log(
+  courses.sort(function (a, b) {
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+    if (nameA < nameB) return -1;
+    if (nameA > nameB) return 1;
+    return 0;
+  })
+);
